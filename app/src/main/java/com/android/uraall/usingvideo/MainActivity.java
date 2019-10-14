@@ -13,11 +13,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String path="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-        Uri uri=Uri.parse(path);
+//        String path="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+//        Uri uri=Uri.parse(path);
 
         VideoView videoView = findViewById(R.id.videoView);
-        videoView.setVideoURI(uri);
+        videoView.setVideoPath("android.resource://" + getPackageName() +
+                "/" + R.raw.demo);
+//        videoView.setVideoURI(uri);
 
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
